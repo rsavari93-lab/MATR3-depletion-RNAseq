@@ -225,7 +225,7 @@ if (any(is.na(expr_mat))) {
           "these genes/samples may show blank cells in the heatmap.")
 }
 
-## log2-transform (add pseudocount) then row Z-score, matching Fig 4D legend
+## log2-transform (add pseudocount) then row Z-score, matching Fig 5D legend
 expr_log <- log2(expr_mat + 1)
 expr_z   <- t(scale(t(expr_log)))   # row-wise Z-score
 
@@ -272,9 +272,9 @@ final_fig <- (top_row / bottom_row) +
   theme(plot.tag = element_text(size = 11, face = "bold"))
 
 ## ---- 9. Save -----------------------------------------------------------------
-ggsave("Fig4_DEG_combined.tiff", plot = final_fig, width = 22, height = 18, units = "cm", dpi = 300, compression = "lzw")
-ggsave("Fig4_DEG_combined.pdf",  plot = final_fig, width = 22, height = 18, units = "cm", dpi = 300)
+ggsave("Fig5_DEG_combined.tiff", plot = final_fig, width = 22, height = 18, units = "cm", dpi = 300, compression = "lzw")
+ggsave("Fig5_DEG_combined.pdf",  plot = final_fig, width = 22, height = 18, units = "cm", dpi = 300)
 
-message("Done. Saved Fig4_DEG_combined.tiff and .pdf")
+message("Done. Saved Fig5_DEG_combined.tiff and .pdf")
 
 getwd()
